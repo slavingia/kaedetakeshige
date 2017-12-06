@@ -1,1 +1,1 @@
-# kaedetakeshige.com
+Hi! I'm Kaede Takeshige.
