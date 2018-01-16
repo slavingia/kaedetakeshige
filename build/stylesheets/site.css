@@ -1,0 +1,269 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, _reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, _reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 31, _reset.scss */
+body {
+  line-height: 1; }
+
+/* line 34, _reset.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 37, _reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 40, _reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 45, _reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 5, site.css.scss */
+a {
+  color: inherit; }
+
+/* line 7, site.css.scss */
+.clear {
+  clear: both; }
+
+/* line 9, site.css.scss */
+html {
+  font-size: 62.5%; }
+
+/* line 13, site.css.scss */
+body {
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 27px;
+  color: #B4B4B4;
+  padding: 60px; }
+
+/* line 21, site.css.scss */
+header {
+  overflow: hidden; }
+  /* line 24, site.css.scss */
+  header h1 {
+    float: left; }
+  /* line 28, site.css.scss */
+  header a {
+    float: right; }
+
+/* line 33, site.css.scss */
+img {
+  width: 32px;
+  height: 32px; }
+
+/* line 38, site.css.scss */
+.container {
+  max-width: 690px;
+  margin: 0 auto; }
+
+/* line 43, site.css.scss */
+h1 {
+  font-size: 2.8em;
+  line-height: 32px;
+  color: black; }
+
+/* line 49, site.css.scss */
+h2, h3 {
+  font-size: 1.8em;
+  line-height: 32px; }
+
+/* line 54, site.css.scss */
+h3 {
+  margin: 0 0 30px; }
+
+/* line 58, site.css.scss */
+.nav {
+  font-size: 1.8em;
+  line-height: 32px;
+  margin: 0;
+  text-align: center;
+  background: white;
+  padding: 30px 0; }
+  /* line 66, site.css.scss */
+  .nav li {
+    display: inline-block;
+    margin: 0 15px; }
+  /* line 71, site.css.scss */
+  .nav .active {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    font-weight: 500; }
+    /* line 77, site.css.scss */
+    .nav .active:after {
+      content: '';
+      position: absolute;
+      border: 6px solid transparent;
+      border-top-color: black;
+      top: 30px;
+      left: 50%;
+      margin-left: -6px; }
+
+/* line 89, site.css.scss */
+.demo-reel {
+  background: url("/images/reel_bg@2x.png");
+  width: 100%;
+  height: 340px;
+  background-size: 100% 100%;
+  margin: 30px 0 0;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden; }
+  /* line 99, site.css.scss */
+  .demo-reel button {
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    padding: 0;
+    width: 200px;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -30px;
+    background: #CE2C2C url("/images/play.svg") no-repeat 25px center;
+    text-indent: 25px;
+    font-size: 1.8em;
+    color: white;
+    border: 0;
+    outline: 0;
+    transition: all 0.1s ease-in-out; }
+    /* line 119, site.css.scss */
+    .demo-reel button::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+      transition: opacity 0.1s ease-in-out; }
+    /* line 131, site.css.scss */
+    .demo-reel button:hover {
+      margin-top: -32px;
+      cursor: pointer; }
+      /* line 135, site.css.scss */
+      .demo-reel button:hover::before {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        opacity: 1; }
+    /* line 141, site.css.scss */
+    .demo-reel button:active {
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+      background: #992020 url("/images/play.svg") no-repeat 25px center;
+      margin-top: -30px; }
+      /* line 146, site.css.scss */
+      .demo-reel button:active::before {
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); }
+
+/* line 153, site.css.scss */
+.grid {
+  position: relative;
+  left: -30px;
+  top: -30px; }
+
+/* line 159, site.css.scss */
+.grid li {
+  display: block;
+  background: #D8D8D8;
+  border-radius: 4px;
+  position: absolute; }
+
+/* line 166, site.css.scss */
+footer {
+  clear: both;
+  text-align: center;
+  color: #999; }
+
+@media (max-width: 840px) {
+  /* line 173, site.css.scss */
+  body {
+    font-size: 0.8em;
+    padding: 15px; }
+
+  /* line 178, site.css.scss */
+  h1 {
+    line-height: 24px; }
+
+  /* line 182, site.css.scss */
+  img {
+    width: 24px;
+    height: 24px; }
+
+  /* line 187, site.css.scss */
+  .nav {
+    padding: 15px 0; }
+    /* line 190, site.css.scss */
+    .nav li {
+      margin: 0 8px; }
+    /* line 194, site.css.scss */
+    .nav .active:after {
+      display: none; }
+
+  /* line 199, site.css.scss */
+  .demo-reel {
+    margin-top: 10px;
+    height: 200px; }
+
+  /* line 204, site.css.scss */
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 15px; }
+
+  /* line 209, site.css.scss */
+  .portfolio-pieces li {
+    width: 100%;
+    height: 165px; }
+
+  /* line 214, site.css.scss */
+  .grid {
+    left: 0;
+    top: 0; }
+    /* line 218, site.css.scss */
+    .grid li {
+      position: static;
+      margin-top: 15px; }
+      /* line 222, site.css.scss */
+      .grid li:first-of-type {
+        margin-top: 0; }
+
+  /* line 228, site.css.scss */
+  footer {
+    margin-top: 15px; } }
