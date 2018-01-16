@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="18px" viewBox="0 0 13 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-copy" transform="translate(-265.000000, -222.000000)" fill="#FFFFFF">
+            <g id="demo-reel" transform="translate(2.000000, 63.000000)">
+                <g id="Group" transform="translate(236.000000, 140.000000)">
+                    <g id="Group-2" transform="translate(22.000000, 16.000000)">
+                        <path d="M7.98144531,19.9169922 L17.3271484,13.0849609 C17.6816406,12.8271484 17.875,12.4189453 17.875,12 C17.875,11.5810547 17.6816406,11.1728516 17.3271484,10.9150391 L7.98144531,4.08300781 C7.70214844,3.85742188 7.35839844,3.75 7.01464844,3.75 C6.7890625,3.75 6.57421875,3.79296875 6.37011719,3.87890625 C5.83300781,4.11523438 5.5,4.63085938 5.5,5.17871094 L5.5,18.8427734 C5.5,19.390625 5.83300781,19.8847656 6.37011719,20.1103516 C6.57421875,20.2070312 6.7890625,20.25 7.01464844,20.25 C7.35839844,20.25 7.70214844,20.1318359 7.98144531,19.9169922 Z" id="play"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

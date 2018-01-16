@@ -1,1 +1,11 @@
-Hi! I'm Kaede Takeshige.
+To run locally:
+
+```bash
+middleman server
+```
+
+To publish:
+
+```bash
+rake publish BRANCH_NAME=master
+```

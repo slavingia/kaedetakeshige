@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title><%= current_page.data.title %></title>
+    <%= stylesheet_link_tag :site %>
+    <%= stylesheet_link_tag "jquery.gridster.min" %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/javascripts/jquery.gridster.min.js"></script>
+    <script src="/javascripts/jquery.sticky.js"></script>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <%= yield %>
+  </body>
+
+  <script>
+    $(function() {
+      var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+      if (width > 850) {
+        $(".grid").gridster({
+          widget_margins: [30, 30],
+          widget_base_dimensions: [150, 165]
+        });
+      }
+
+
+      $('.nav').sticky({ topSpacing: 0 });
+
+      $('.nav a').on('click', function(e) {
+        e.preventDefault();
+
+        $('html, body').animate({
+          scrollTop: $($(this).attr('href')).offset().top - 60
+        }, 1000);
+      });
+
+      $(window).on('scroll', function() {
+        $('.portfolio-pieces').each(function() {
+          if ($(window).scrollTop() >= $(this).offset().top - 120) {
+            var id = $(this).attr('id');
+            $('.nav a').removeClass('active');
+            console.log(id);
+            $('.nav a[href="#'+ id +'"]').addClass('active');
+          }
+        });
+
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+          $('.nav a').removeClass('active');
+          $('.nav a[href="#other"]').addClass('active');
+        }
+      });
+    });    
+  </script>
+</html>
