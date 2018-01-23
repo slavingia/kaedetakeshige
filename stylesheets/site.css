@@ -81,11 +81,10 @@ header {
   /* line 28, site.css.scss */
   header a {
     float: right; }
-
-/* line 33, site.css.scss */
-img {
-  width: 32px;
-  height: 32px; }
+  /* line 32, site.css.scss */
+  header img {
+    width: 32px;
+    height: 32px; }
 
 /* line 38, site.css.scss */
 .container {
@@ -204,66 +203,102 @@ h3 {
   display: block;
   background: #D8D8D8;
   border-radius: 4px;
-  position: absolute; }
+  position: absolute;
+  overflow: hidden; }
+  /* line 166, site.css.scss */
+  .grid li:hover {
+    cursor: pointer; }
+  /* line 170, site.css.scss */
+  .grid li img {
+    width: 100%; }
 
-/* line 166, site.css.scss */
+/* line 175, site.css.scss */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1111;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease-in-out; }
+  /* line 188, site.css.scss */
+  .overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer; }
+  /* line 194, site.css.scss */
+  .overlay img {
+    max-width: 500px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%); }
+
+/* line 204, site.css.scss */
 footer {
   clear: both;
   text-align: center;
   color: #999; }
 
 @media (max-width: 840px) {
-  /* line 173, site.css.scss */
+  /* line 211, site.css.scss */
   body {
     font-size: 0.8em;
     padding: 15px; }
 
-  /* line 178, site.css.scss */
+  /* line 216, site.css.scss */
   h1 {
     line-height: 24px; }
 
-  /* line 182, site.css.scss */
-  img {
+  /* line 220, site.css.scss */
+  header img {
     width: 24px;
     height: 24px; }
 
-  /* line 187, site.css.scss */
+  /* line 225, site.css.scss */
   .nav {
     padding: 15px 0; }
-    /* line 190, site.css.scss */
+    /* line 228, site.css.scss */
     .nav li {
       margin: 0 8px; }
-    /* line 194, site.css.scss */
+    /* line 232, site.css.scss */
     .nav .active:after {
-      display: none; }
+      border-width: 4px;
+      margin-left: -4px;
+      top: 22px; }
 
-  /* line 199, site.css.scss */
+  /* line 239, site.css.scss */
   .demo-reel {
     margin-top: 10px;
     height: 200px; }
 
-  /* line 204, site.css.scss */
+  /* line 244, site.css.scss */
   h3 {
     margin-top: 30px;
     margin-bottom: 15px; }
 
-  /* line 209, site.css.scss */
+  /* line 249, site.css.scss */
   .portfolio-pieces li {
     width: 100%;
     height: 165px; }
 
-  /* line 214, site.css.scss */
+  /* line 254, site.css.scss */
   .grid {
     left: 0;
     top: 0; }
-    /* line 218, site.css.scss */
+    /* line 258, site.css.scss */
     .grid li {
       position: static;
       margin-top: 15px; }
-      /* line 222, site.css.scss */
+      /* line 262, site.css.scss */
       .grid li:first-of-type {
         margin-top: 0; }
 
-  /* line 228, site.css.scss */
+  /* line 268, site.css.scss */
   footer {
     margin-top: 15px; } }

@@ -21,6 +21,9 @@
   </div>
 </header>
 
+<section class="overlay">
+</section>
+
 <section>
   <div class="container">
     <div class="hero demo-reel">
@@ -91,21 +94,20 @@
     </ul>
     <h3>Figure drawing:</h3>
     <ul class="portfolio-pieces grid" id="figure-drawing">
+      <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+        <img src="/images/portfolio/figure_6.jpg" />
+      </li>
       <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <img src="/images/portfolio/figure_2.jpg" />
       </li>
       <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
-      </li>
-      <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+        <img src="/images/portfolio/figure_1.jpg" />
       </li>
       <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
-      </li>
-      <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+        <img src="/images/portfolio/figure_3.jpg" />
       </li>
       <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
-      </li>
-      <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
-      </li>
-      <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+        <img src="/images/portfolio/figure_5.jpg" />
       </li>
     </ul>
     <h3>Other:</h3>
@@ -149,10 +151,9 @@
       if (width > 850) {
         $(".grid").gridster({
           widget_margins: [30, 30],
-          widget_base_dimensions: [150, 165]
+          widget_base_dimensions: [150, 195]
         });
       }
-
 
       $('.nav').sticky({ topSpacing: 0 });
 
@@ -162,6 +163,18 @@
         $('html, body').animate({
           scrollTop: $($(this).attr('href')).offset().top - 60
         }, 1000);
+      });
+
+      $('.grid li').on('click', function(e) {
+        e.preventDefault();
+
+        $('.overlay').html($(this).html());
+        $('.overlay').addClass('active');
+      });
+
+      $('.overlay').on('click', function(e) {
+        e.preventDefault();
+        $('.overlay').removeClass('active');
       });
 
       $(window).on('scroll', function() {
