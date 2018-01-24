@@ -16,6 +16,13 @@ body {
   line-height: 27px;
   color: #B4B4B4;
   padding: 60px;
+  opacity: 0;
+  transition: .3s opacity ease-in-out;
+  animation-delay: 3s;
+
+  &.loaded {
+    opacity: 1;
+  }
 }
 
 header {
