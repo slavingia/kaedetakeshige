@@ -27,7 +27,7 @@ header {
 
   a {
     float: right;
-  }  
+  }
 
   img {
     width: 32px;
@@ -66,22 +66,26 @@ h3 {
   li {
     display: inline-block;
     margin: 0 15px;
-  }
 
-  .active {
-    text-decoration: none;
-    color: black;
-    position: relative;
-    font-weight: 500;
+    a {
+      transition: .1s color ease-in-out;      
+    }
 
-    &:after {
-      content: '';
-      position: absolute;
-      border: 6px solid transparent;
-      border-top-color: black;
-      top: 30px;
-      left: 50%;
-      margin-left: -6px;
+    .active {
+      text-decoration: none;
+      color: black;
+      position: relative;
+      font-weight: 500;
+
+      &:after {
+        content: '';
+        position: absolute;
+        border: 6px solid transparent;
+        border-top-color: black;
+        top: 30px;
+        left: 50%;
+        margin-left: -6px;
+      }
     }
   }
 }
