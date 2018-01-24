@@ -50,11 +50,17 @@
 
         $('.overlay').html($(this).html());
         $('.overlay').addClass('active');
+        $('.overlay video').attr('autoplay', true);
       });
 
       $('.overlay').on('click', function(e) {
         e.preventDefault();
+
         $('.overlay').removeClass('active');
+        $('.overlay video').attr('autoplay', false);
+        setTimeout(function() {
+          $('.overlay').html(' ');
+        }, 1000);
       });
 
       $(window).on('scroll', function() {
