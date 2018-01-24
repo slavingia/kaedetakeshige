@@ -19,14 +19,21 @@
 
   <script>
     $(function() {
-      var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-
-      if (width > 850) {
-        $(".grid").gridster({
-          widget_margins: [30, 30],
-          widget_base_dimensions: [150, 195]
-        });
+      var setupLayout = function() {
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        if (width > 640) {
+          $(".grid").gridster({
+            widget_margins: [30, 30],
+            widget_base_dimensions: [150, 195]
+          });
+        }
       }
+
+      setupLayout();
+
+      $(window).on('resize', function(){
+        setupLayout();
+      });
 
       $('.nav').sticky({ topSpacing: 0 });
 
@@ -52,10 +59,9 @@
 
       $(window).on('scroll', function() {
         $('.portfolio-pieces').each(function() {
-          if ($(window).scrollTop() >= $(this).offset().top - 120) {
+          if ($(window).scrollTop() >= $(this).offset().top - 200) {
             var id = $(this).attr('id');
             $('.nav a').removeClass('active');
-            console.log(id);
             $('.nav a[href="#'+ id +'"]').addClass('active');
           }
         });

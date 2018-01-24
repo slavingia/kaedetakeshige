@@ -68,7 +68,7 @@ h3 {
     margin: 0 15px;
 
     a {
-      transition: .1s color ease-in-out;      
+      transition: .1s color ease-in-out;
     }
 
     .active {
@@ -211,7 +211,7 @@ footer {
   color: #999;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 640px) {
   body {
     font-size: 0.8em;
     padding: 15px;
@@ -230,13 +230,13 @@ footer {
     padding: 15px 0;
 
     li {
-      margin: 0 8px;
-    }
+      margin: 0 6px;
 
-    .active:after {
-      border-width: 4px;
-      margin-left: -4px;
-      top: 22px;
+      .active:after {
+        border-width: 4px;
+        margin-left: -4px;
+        top: 22px;
+      }
     }
   }
 
@@ -252,7 +252,11 @@ footer {
 
   .portfolio-pieces li {
     width: 100%;
-    height: 165px;
+    min-height: 165px;
+
+    img {
+      display: block;
+    }
   }
 
   .grid {
