@@ -27,9 +27,11 @@
       var setupLayout = function() {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
+          var base_width = ($('.portfolio-pieces').width() - 30 * 5) / 4;
+
           var grids = $('.grid').gridster({
             widget_margins: [30, 30],
-            widget_base_dimensions: ['auto', 180],
+            widget_base_dimensions: [base_width, base_width * 1.2],
             min_cols: 1,
             max_cols: 4
           }).data('gridster');
