@@ -27,10 +27,13 @@
       var setupLayout = function() {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
-          $(".grid").gridster({
+          var grids = $(".grid").gridster({
             widget_margins: [30, 30],
-            widget_base_dimensions: [150, 195]
-          }).data('gridster').disable();
+            widget_base_dimensions: [150, 180]
+          }).data('gridster');
+
+
+          grids.disable();
         }
       }
 
@@ -80,5 +83,15 @@
         }
       });
     });
+  </script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-113119176-1', 'auto');
+    ga('send', 'pageview');
   </script>
 </html>
