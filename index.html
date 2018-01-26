@@ -30,11 +30,11 @@
 <section>
   <div class="container">
     <div class="hero demo-reel">
-      <button class="js-trigger-demo-reel-play">Play demo reel</button>
+      <button class="js-trigger-demo-reel-play"></button>
+      <video src="/videos/demoreel.mp4" class="demo-reel-video" />
     </div>
     <ul class="nav">
       <li><a href="#modeling" class="active">Modeling</a></li>
-      <li><a href="#rigging">Rigging</a></li>
       <li><a href="#animation">Animation</a></li>
       <li><a href="#figure-drawing">Figure drawing</a></li>
     </ul>
@@ -50,26 +50,19 @@
         <img src="/images/portfolio/Zed.jpg" />
       </li>
     </ul>
-    <h3>Rigging:</h3>
-    <ul class="portfolio-pieces grid" id="rigging">
-      <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-      </li>
-      <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
-      </li>
-    </ul>
     <h3>Animation:</h3>
     <ul class="portfolio-pieces grid" id="animation">
       <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
         <video src="/videos/ramshorn.mp4" />
       </li>
-      <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
-        <video src="/videos/kenneth.mov" />
+      <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+        <video src="/videos/dialogue.mov" />
       </li>
       <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
-        <video src="/videos/natsumatsuri.mp4" />
+        <video src="/videos/cage_fight.mov" />
       </li>
-      <li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
-        <video src="/videos/natsumatsuri.mp4" />
+      <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
+        <video src="/videos/kenneth.mov" />
       </li>
     </ul>
     <h3>Figure drawing:</h3>
@@ -78,17 +71,26 @@
         <img src="/images/portfolio/figure_6.jpg" />
         <label>3-hour life drawing of Alex Moore, nupastel on newsprint</label>
       </li>
-      <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <img src="/images/portfolio/figure_2.jpg" />
+      <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
+        <img src="/images/portfolio/figure_9.jpg" />
       </li>
-      <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
+      <li data-row="2" data-col="3" data-sizex="2" data-sizey="2">
         <img src="/images/portfolio/figure_1.jpg" />
       </li>
-      <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
         <img src="/images/portfolio/figure_3.jpg" />
+      </li>
+      <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+        <img src="/images/portfolio/figure_2.jpg" />
       </li>
       <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
         <img src="/images/portfolio/figure_5.jpg" />
+      </li>
+      <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+        <img src="/images/portfolio/figure_7.jpg" />
+      </li>
+      <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+        <img src="/images/portfolio/figure_8.jpg" />
       </li>
     </ul>
   </div>
@@ -100,19 +102,6 @@
   </div>
 </footer>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  // TODO: update!
-
-  ga('create', 'UA-48653601-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
   </body>
 
   <script>
@@ -122,10 +111,17 @@
       var setupLayout = function() {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
-          $(".grid").gridster({
+          var base_width = ($('.portfolio-pieces').width() - 30 * 5) / 4;
+
+          var grids = $('.grid').gridster({
             widget_margins: [30, 30],
-            widget_base_dimensions: [150, 195]
-          }).data('gridster').disable();
+            widget_base_dimensions: [base_width, base_width * 1.2],
+            min_cols: 1,
+            max_cols: 4
+          }).data('gridster');
+
+
+          grids.disable();
         }
       }
 
@@ -153,6 +149,20 @@
         $('.overlay video').attr('autoplay', true);
       });
 
+      var demoReelVideo = $(".demo-reel-video")[0];
+
+      $('.js-trigger-demo-reel-play').on('click', function(e) {
+        e.preventDefault();
+
+        $(this).addClass('hidden');
+        demoReelVideo.play()
+      });
+
+      demoReelVideo.onended = function(e) {
+        demoReelVideo.load();     
+        $('.js-trigger-demo-reel-play').removeClass('hidden');
+      };
+
       $('.overlay').on('click', function(e) {
         e.preventDefault();
 
@@ -175,5 +185,15 @@
         }
       });
     });
+  </script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-113119176-1', 'auto');
+    ga('send', 'pageview');
   </script>
 </html>
