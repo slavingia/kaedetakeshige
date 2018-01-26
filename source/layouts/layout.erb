@@ -27,9 +27,11 @@
       var setupLayout = function() {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
-          var grids = $(".grid").gridster({
+          var grids = $('.grid').gridster({
             widget_margins: [30, 30],
-            widget_base_dimensions: [150, 180]
+            widget_base_dimensions: ['auto', 180],
+            min_cols: 1,
+            max_cols: 4
           }).data('gridster');
 
 
@@ -60,6 +62,20 @@
         $('.overlay').addClass('active');
         $('.overlay video').attr('autoplay', true);
       });
+
+      var demoReelVideo = $(".demo-reel-video")[0];
+
+      $('.js-trigger-demo-reel-play').on('click', function(e) {
+        e.preventDefault();
+
+        $(this).addClass('hidden');
+        demoReelVideo.play()
+      });
+
+      demoReelVideo.onended = function(e) {
+        demoReelVideo.load();     
+        $('.js-trigger-demo-reel-play').removeClass('hidden');
+      };
 
       $('.overlay').on('click', function(e) {
         e.preventDefault();

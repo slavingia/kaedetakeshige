@@ -30,9 +30,11 @@ header {
 
   h1 {
     float: left;
+    margin-left: 30px;
   }
 
   a {
+    margin-right: 30px;
     float: right;
   }
 
@@ -43,7 +45,7 @@ header {
 }
 
 .container {
-  max-width: 690px;
+  max-width: 2070px;
   margin: 0 auto;
 }
 
@@ -59,7 +61,7 @@ h2, h3 {
 }
 
 h3 {
-  margin: 0 0 30px;
+  margin: 30px 30px 0;
 }
 
 .nav {
@@ -99,13 +101,15 @@ h3 {
 
 .demo-reel {
   background: url('/images/reel_bg@2x.png');
-  width: 100%;
-  height: 340px;
+  margin: 30px 30px 0;
   background-size: 100% 100%;
-  margin: 30px 0 0;
   position: relative;
   border-radius: 4px;
   overflow: hidden;
+
+  video {
+    display: block;
+  }
 
   button {
     border-radius: 4px;
@@ -115,7 +119,7 @@ h3 {
     padding: 0;
     width: 60px;
     height: 60px;
-    left: 50%;
+    left: 75%;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
     background: #CE2C2C url('/images/play.svg') no-repeat center;
@@ -125,6 +129,7 @@ h3 {
     border: 0;
     outline: 0;
     transition: all 0.1s ease-in-out;
+    z-index: 1;
 
     &::before {
       content: '';
@@ -139,7 +144,7 @@ h3 {
     }
 
     &:hover {
-      margin-top: -32px;
+      margin-top: -2px;
       cursor: pointer;
 
       &::before {
@@ -151,23 +156,21 @@ h3 {
     &:active {
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
       background: #992020 url('/images/play.svg') no-repeat center;
-      margin-top: -30px;
+      margin-top: 0;
 
       &::before {
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
       }
     }
+
+    &.hidden {
+      opacity: 0;
+    }
   }
-}
 
-.portfolio-pieces:nth-of-type(odd) {
-  background: #e0e0e0;
-}
-
-.grid {
-  position: relative;
-  left: -30px;
-  top: -30px;
+  video {
+    width: 100%;
+  }
 }
 
 .grid li {
@@ -188,6 +191,7 @@ h3 {
     background: rgba(0, 0, 0, .1);
     opacity: 0;
     transition: opacity 0.1s ease-in-out;      
+    pointer-events: none;
   }
 
   &:hover {
@@ -212,6 +216,10 @@ h3 {
   label {
     display: none;
   }
+}
+
+.portfolio-pieces:first-of-type {
+  margin-top: -30px;
 }
 
 .overlay {
@@ -262,21 +270,40 @@ footer {
   clear: both;
   text-align: center;
   color: #999;
+  margin-top: 30px;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1035px;
+    margin: 0 auto;
+  }  
 }
 
 @media (max-width: 640px) {
   body {
     font-size: 0.8em;
-    padding: 15px;
+    padding: 15px 0;
   }
 
-  h1 {
-    line-height: 24px;
-  }
+  header {
+    .container {
+      padding: 0 15px;
+    }
 
-  header img {
-    width: 24px;
-    height: 24px;
+    h1 {
+      line-height: 24px;
+      margin-left: 0;
+    }
+
+    a {
+      margin-right: 0;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   .nav {
@@ -294,13 +321,20 @@ footer {
   }
 
   .demo-reel {
-    margin-top: 10px;
+    margin: 15px 15px 0;
     height: 200px;
   }
 
   h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin: 15px 15px 0;
+  }
+
+  .grid {
+    padding: 15px;
+  }
+
+  .portfolio-pieces:first-of-type {
+    margin-top: -15px;
   }
 
   .portfolio-pieces li {
@@ -327,7 +361,7 @@ footer {
   }
 
   footer {
-    margin-top: 15px;
+    margin-top: 0;
   }
 }
 
