@@ -83,36 +83,38 @@ header {
   overflow: hidden; }
   /* line 31, site.css.scss */
   header h1 {
-    float: left; }
-  /* line 35, site.css.scss */
+    float: left;
+    margin-left: 30px; }
+  /* line 36, site.css.scss */
   header a {
+    margin-right: 30px;
     float: right; }
-  /* line 39, site.css.scss */
+  /* line 41, site.css.scss */
   header img {
     width: 32px;
     height: 32px; }
 
-/* line 45, site.css.scss */
+/* line 47, site.css.scss */
 .container {
-  max-width: 690px;
+  max-width: 2070px;
   margin: 0 auto; }
 
-/* line 50, site.css.scss */
+/* line 52, site.css.scss */
 h1 {
   font-size: 2.8em;
   line-height: 32px;
   color: black; }
 
-/* line 56, site.css.scss */
+/* line 58, site.css.scss */
 h2, h3 {
   font-size: 1.8em;
   line-height: 32px; }
 
-/* line 61, site.css.scss */
+/* line 63, site.css.scss */
 h3 {
-  margin: 0 0 30px; }
+  margin: 30px 30px 0; }
 
-/* line 65, site.css.scss */
+/* line 67, site.css.scss */
 .nav {
   font-size: 1.8em;
   line-height: 32px;
@@ -120,20 +122,20 @@ h3 {
   text-align: center;
   background: white;
   padding: 30px 0; }
-  /* line 73, site.css.scss */
+  /* line 75, site.css.scss */
   .nav li {
     display: inline-block;
     margin: 0 15px; }
-    /* line 77, site.css.scss */
+    /* line 79, site.css.scss */
     .nav li a {
       transition: .1s color ease-in-out; }
-    /* line 81, site.css.scss */
+    /* line 83, site.css.scss */
     .nav li .active {
       text-decoration: none;
       color: black;
       position: relative;
       font-weight: 500; }
-      /* line 87, site.css.scss */
+      /* line 89, site.css.scss */
       .nav li .active:after {
         content: '';
         position: absolute;
@@ -143,37 +145,38 @@ h3 {
         left: 50%;
         margin-left: -6px; }
 
-/* line 100, site.css.scss */
+/* line 102, site.css.scss */
 .demo-reel {
   background: url("/images/reel_bg@2x.png");
-  width: 100%;
-  height: 340px;
+  margin: 30px 30px 0;
   background-size: 100% 100%;
-  margin: 30px 0 0;
   position: relative;
   border-radius: 4px;
   overflow: hidden; }
   /* line 110, site.css.scss */
+  .demo-reel video {
+    display: block; }
+  /* line 114, site.css.scss */
   .demo-reel button {
     border-radius: 4px;
     box-sizing: border-box;
     display: block;
     position: absolute;
     padding: 0;
-    width: 200px;
+    width: 60px;
     height: 60px;
-    left: 50%;
+    left: 75%;
     top: 50%;
-    margin-left: -100px;
-    margin-top: -30px;
-    background: #CE2C2C url("/images/play.svg") no-repeat 25px center;
+    transform: translateY(-50%) translateX(-50%);
+    background: #CE2C2C url("/images/play.svg") no-repeat center;
     text-indent: 25px;
     font-size: 1.8em;
     color: white;
     border: 0;
     outline: 0;
-    transition: all 0.1s ease-in-out; }
-    /* line 130, site.css.scss */
+    transition: all 0.1s ease-in-out;
+    z-index: 1; }
+    /* line 134, site.css.scss */
     .demo-reel button::before {
       content: '';
       position: absolute;
@@ -184,48 +187,73 @@ h3 {
       box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: opacity 0.1s ease-in-out; }
-    /* line 142, site.css.scss */
+    /* line 146, site.css.scss */
     .demo-reel button:hover {
-      margin-top: -32px;
+      margin-top: -2px;
       cursor: pointer; }
-      /* line 146, site.css.scss */
+      /* line 150, site.css.scss */
       .demo-reel button:hover::before {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         opacity: 1; }
-    /* line 152, site.css.scss */
+    /* line 156, site.css.scss */
     .demo-reel button:active {
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-      background: #992020 url("/images/play.svg") no-repeat 25px center;
-      margin-top: -30px; }
-      /* line 157, site.css.scss */
+      background: #992020 url("/images/play.svg") no-repeat center;
+      margin-top: 0; }
+      /* line 161, site.css.scss */
       .demo-reel button:active::before {
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); }
+    /* line 166, site.css.scss */
+    .demo-reel button.hidden {
+      opacity: 0; }
+  /* line 171, site.css.scss */
+  .demo-reel video {
+    width: 100%; }
 
-/* line 164, site.css.scss */
-.grid {
-  position: relative;
-  left: -30px;
-  top: -30px; }
-
-/* line 170, site.css.scss */
+/* line 176, site.css.scss */
 .grid li {
   display: block;
   background: #D8D8D8;
   border-radius: 4px;
   position: absolute;
+  transition: all .1s ease-in-out !important;
   overflow: hidden; }
-  /* line 177, site.css.scss */
+  /* line 184, site.css.scss */
+  .grid li::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    pointer-events: none; }
+  /* line 197, site.css.scss */
   .grid li:hover {
-    cursor: pointer; }
-  /* line 181, site.css.scss */
+    cursor: pointer;
+    margin-top: -2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  /* line 203, site.css.scss */
+  .grid li:active {
+    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1); }
+    /* line 206, site.css.scss */
+    .grid li:active::before {
+      opacity: 1; }
+  /* line 211, site.css.scss */
   .grid li img, .grid li video {
     max-width: 100%;
     display: block; }
-  /* line 186, site.css.scss */
+  /* line 216, site.css.scss */
   .grid li label {
     display: none; }
 
-/* line 191, site.css.scss */
+/* line 221, site.css.scss */
+.portfolio-pieces:first-of-type {
+  margin-top: -30px; }
+
+/* line 225, site.css.scss */
 .overlay {
   position: fixed;
   top: 0;
@@ -238,12 +266,12 @@ h3 {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.1s ease-in-out; }
-  /* line 204, site.css.scss */
+  /* line 238, site.css.scss */
   .overlay.active {
     opacity: 1;
     pointer-events: all;
     cursor: pointer; }
-  /* line 210, site.css.scss */
+  /* line 244, site.css.scss */
   .overlay img, .overlay video {
     max-height: 90%;
     max-width: 90%;
@@ -255,7 +283,7 @@ h3 {
     transform: translateY(-50%) translateX(-50%);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
     pointer-events: none; }
-  /* line 223, site.css.scss */
+  /* line 257, site.css.scss */
   .overlay label {
     text-align: center;
     color: #ddd;
@@ -266,72 +294,90 @@ h3 {
     transform: translateX(-50%);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
 
-/* line 235, site.css.scss */
+/* line 269, site.css.scss */
 footer {
   clear: both;
   text-align: center;
-  color: #999; }
+  color: #999;
+  margin-top: 30px; }
 
+@media (max-width: 1400px) {
+  /* line 277, site.css.scss */
+  .container {
+    max-width: 1035px;
+    margin: 0 auto; } }
 @media (max-width: 640px) {
-  /* line 242, site.css.scss */
+  /* line 284, site.css.scss */
   body {
     font-size: 0.8em;
-    padding: 15px; }
+    padding: 15px 0; }
 
-  /* line 247, site.css.scss */
-  h1 {
-    line-height: 24px; }
-
-  /* line 251, site.css.scss */
+  /* line 290, site.css.scss */
+  header .container {
+    padding: 0 15px; }
+  /* line 294, site.css.scss */
+  header h1 {
+    line-height: 24px;
+    margin-left: 0; }
+  /* line 299, site.css.scss */
+  header a {
+    margin-right: 0; }
+  /* line 303, site.css.scss */
   header img {
     width: 24px;
     height: 24px; }
 
-  /* line 256, site.css.scss */
+  /* line 309, site.css.scss */
   .nav {
     padding: 15px 0; }
-    /* line 259, site.css.scss */
+    /* line 312, site.css.scss */
     .nav li {
       margin: 0 6px; }
-      /* line 262, site.css.scss */
+      /* line 315, site.css.scss */
       .nav li .active:after {
         border-width: 4px;
         margin-left: -4px;
         top: 22px; }
 
-  /* line 270, site.css.scss */
+  /* line 323, site.css.scss */
   .demo-reel {
-    margin-top: 10px;
-    height: 200px; }
+    margin: 15px 15px 0; }
 
-  /* line 275, site.css.scss */
+  /* line 327, site.css.scss */
   h3 {
-    margin-top: 30px;
-    margin-bottom: 15px; }
+    margin: 15px 15px 0; }
 
-  /* line 280, site.css.scss */
+  /* line 331, site.css.scss */
+  .grid {
+    padding: 15px; }
+
+  /* line 335, site.css.scss */
+  .portfolio-pieces:first-of-type {
+    margin-top: -15px; }
+
+  /* line 339, site.css.scss */
   .portfolio-pieces li {
     width: 100%;
     min-height: 165px; }
-    /* line 284, site.css.scss */
+    /* line 343, site.css.scss */
     .portfolio-pieces li img, .portfolio-pieces li video {
       min-height: 100%; }
 
-  /* line 289, site.css.scss */
+  /* line 348, site.css.scss */
   .grid {
     left: 0;
     top: 0; }
-    /* line 293, site.css.scss */
+    /* line 352, site.css.scss */
     .grid li {
       position: static;
       margin-top: 15px; }
-      /* line 297, site.css.scss */
+      /* line 356, site.css.scss */
       .grid li:first-of-type {
         margin-top: 0; }
 
-  /* line 303, site.css.scss */
+  /* line 362, site.css.scss */
   footer {
-    margin-top: 15px; } }
-/* line 310, site.css.scss */
+    margin-top: 0; } }
+/* line 369, site.css.scss */
 [data-sizex="4"] {
   width: 690px; }
