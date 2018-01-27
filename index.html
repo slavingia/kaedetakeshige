@@ -156,11 +156,13 @@
 
         $(this).addClass('hidden');
         demoReelVideo.play()
+        $(demoReelVideo).attr('controls', 'controls');
       });
 
       demoReelVideo.onended = function(e) {
         demoReelVideo.load();     
         $('.js-trigger-demo-reel-play').removeClass('hidden');
+        $(demoReelVideo).removeAttr('controls');
       };
 
       $('.overlay').on('click', function(e) {
