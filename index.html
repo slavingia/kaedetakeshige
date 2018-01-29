@@ -7,7 +7,6 @@
     <meta name="description" content="An aspiring BYU Animation student with an emphasis in rigging.">
     <title>Kaede Takeshige</title>
     <link href="/stylesheets/site.css" rel="stylesheet" />
-    <link href="/stylesheets/jquery.gridster.min.css" rel="stylesheet" />
 
     <link rel="shortcut icon" href="/images/favicon.png" />
 
@@ -41,56 +40,69 @@
     <ul class="portfolio-pieces grid" id="modeling">
       <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
         <img src="/images/portfolio/robot.jpg" />
-        <label>Robot based on illustration by Robert Bradley</label>
+        <label>Modeled in Maya, based on concept by Rustic Hasanov</label>
       </li>
       <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
         <img src="/images/portfolio/boots.jpg" />
+        <label>Responsible for all aspects, created in Maya</label>
       </li>
       <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
         <img src="/images/portfolio/Zed.jpg" />
+        <label>Modeled in Maya, based on concept by Robert Valley for <em>Tron: Uprising</em></label>
       </li>
     </ul>
     <h3>Animation:</h3>
     <ul class="portfolio-pieces grid" id="animation">
       <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
         <video src="/videos/ramshorn.mp4" />
+        <label>Responsible for animation for BYU Animation’s film <em>Ram’s Horn</em></label>
       </li>
       <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
-        <video src="/videos/dialogue.mov" />
+        <video src="/videos/dialogue.mp4" />
+        <label>Responsible for animation, created in Toonboom, audio from <em>30 Rock</em></label>
       </li>
       <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
         <video src="/videos/cage_fight.mov" />
+        <label>Responsible for animation, created in Toonboom</label>
       </li>
       <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
-        <video src="/videos/kenneth.mov" />
+        <video src="/videos/kenneth.mp4" />
+        <label>responsible for modeling and animation audio from <em>30 Rock</em></label>
       </li>
     </ul>
     <h3>Figure drawing:</h3>
     <ul class="portfolio-pieces grid" id="figure-drawing">
       <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
         <img src="/images/portfolio/figure_6.jpg" />
-        <label>3-hour life drawing of Alex Moore, nupastel on newsprint</label>
+        <label>3-hour life drawing, nupastel on cardboard</label>
       </li>
       <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
         <img src="/images/portfolio/figure_9.jpg" />
+        <label>3-hour life drawing, nupastel on newsprint</label>
       </li>
       <li data-row="2" data-col="3" data-sizex="2" data-sizey="2">
         <img src="/images/portfolio/figure_1.jpg" />
+        <label>3-hour life drawing, nupastel on newsprint</label>
       </li>
       <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
         <img src="/images/portfolio/figure_3.jpg" />
+        <label>3-hour life drawing, nupastel on newsprint</label>
       </li>
       <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
         <img src="/images/portfolio/figure_2.jpg" />
+        <label>2-5 minute poses, nupastel on newsprint</label>
       </li>
       <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
         <img src="/images/portfolio/figure_5.jpg" />
+        <label>3-hour life drawing, nupastel on newsprint</label>
       </li>
       <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
         <img src="/images/portfolio/figure_7.jpg" />
+        <label>3-hour life drawing, nupastel on newsprint</label>
       </li>
       <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
         <img src="/images/portfolio/figure_8.jpg" />
+        <label>3-hour life drawing, nupastel on newsprint</label>
       </li>
     </ul>
   </div>
@@ -111,23 +123,32 @@
       var setupLayout = function() {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
-          var base_width = ($('.portfolio-pieces').width() - 30 * 5) / 4;
+          var base_width = ($('.grid').width() - 30 * 5) / 4;
 
-          var grids = $('.grid').gridster({
+          var gridster = $('.grid').gridster({
             widget_margins: [30, 30],
             widget_base_dimensions: [base_width, base_width * 1.2],
             min_cols: 1,
-            max_cols: 4
+            max_cols: 4,
           }).data('gridster');
 
+          gridster.disable();
 
-          grids.disable();
+          $('.grid').css({ 'width': 'auto' });
+          gridster.generate_stylesheet({rows: 4, cols: 4, widget_base_dimensions: [base_width, base_width * 1.2]});
+
+          $('.grid').each(function() {
+            var lastElement = $(this).find('li:last-of-type');
+            $(this).css({ 'height': lastElement.position().top + lastElement.height() + 30 });
+          });
+        } else {
+          $('.grid').css({ 'height' : 'auto' });          
         }
       }
 
       setupLayout();
 
-      $(window).on('resize', function(){
+      $(window).on('resize', function() {
         setupLayout();
       });
 
