@@ -27,7 +27,11 @@
       var setupLayout = function() {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
-          var base_width = ($('.portfolio-pieces').width() - 30 * 5) / 4;
+          var base_width = (($(".demo-reel").width() + 60) - 30 * 5) / 4;
+
+          console.log(base_width);
+
+          $('.grid').css({'width': $(".demo-reel").width() + 200});
 
           var grids = $('.grid').gridster({
             widget_margins: [30, 30],
@@ -36,7 +40,7 @@
             max_cols: 4
           }).data('gridster');
 
-
+          grids.generate_stylesheet({ rows: 4, cols: 4});
           grids.disable();
         }
       }
