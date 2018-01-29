@@ -246,14 +246,26 @@ h3 {
     max-width: 100%;
     display: block; }
   /* line 216, site.css.scss */
+  .grid li .play-button {
+    background: rgba(0, 0, 0, 0.1) url("/images/play.svg") no-repeat center;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    transform: translateY(-50%) translateX(-50%);
+    pointer-events: none;
+    z-index: 999; }
+  /* line 229, site.css.scss */
   .grid li label {
     display: none; }
 
-/* line 221, site.css.scss */
+/* line 234, site.css.scss */
 .portfolio-pieces:first-of-type {
   margin-top: -30px; }
 
-/* line 225, site.css.scss */
+/* line 238, site.css.scss */
 .overlay {
   position: fixed;
   top: 0;
@@ -266,12 +278,15 @@ h3 {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.1s ease-in-out; }
-  /* line 238, site.css.scss */
+  /* line 251, site.css.scss */
   .overlay.active {
     opacity: 1;
     pointer-events: all;
     cursor: pointer; }
-  /* line 244, site.css.scss */
+  /* line 257, site.css.scss */
+  .overlay .thumbnail {
+    display: none; }
+  /* line 261, site.css.scss */
   .overlay img, .overlay video {
     max-height: 90%;
     max-width: 90%;
@@ -281,9 +296,8 @@ h3 {
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-    pointer-events: none; }
-  /* line 257, site.css.scss */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25); }
+  /* line 273, site.css.scss */
   .overlay label {
     text-align: center;
     color: #ddd;
@@ -293,91 +307,97 @@ h3 {
     left: 50%;
     transform: translateX(-50%);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+    /* line 283, site.css.scss */
+    .overlay label em {
+      font-style: oblique; }
 
-/* line 269, site.css.scss */
+/* line 289, site.css.scss */
 footer {
   clear: both;
   text-align: center;
   color: #999;
   margin-top: 30px; }
-  /* line 275, site.css.scss */
+  /* line 295, site.css.scss */
   footer h2:first-of-type {
     margin-bottom: 15px; }
 
 @media (max-width: 1400px) {
-  /* line 281, site.css.scss */
+  /* line 301, site.css.scss */
   .container {
     max-width: 1035px;
     margin: 0 auto; } }
 @media (max-width: 640px) {
-  /* line 288, site.css.scss */
+  /* line 308, site.css.scss */
   body {
     font-size: 0.8em;
     padding: 15px 0; }
 
-  /* line 294, site.css.scss */
+  /* line 314, site.css.scss */
   header .container {
     padding: 0 15px; }
-  /* line 298, site.css.scss */
+  /* line 318, site.css.scss */
   header h1 {
     line-height: 24px;
     margin-left: 0; }
-  /* line 303, site.css.scss */
+  /* line 323, site.css.scss */
   header a {
     margin-right: 0; }
-  /* line 307, site.css.scss */
+  /* line 327, site.css.scss */
   header img {
     width: 24px;
     height: 24px; }
 
-  /* line 313, site.css.scss */
+  /* line 333, site.css.scss */
   .nav {
     padding: 15px 0; }
-    /* line 316, site.css.scss */
+    /* line 336, site.css.scss */
     .nav li {
       margin: 0 6px; }
-      /* line 319, site.css.scss */
+      /* line 339, site.css.scss */
       .nav li .active:after {
         border-width: 4px;
         margin-left: -4px;
         top: 22px; }
 
-  /* line 327, site.css.scss */
+  /* line 347, site.css.scss */
   .demo-reel {
     margin: 15px 15px 0; }
 
-  /* line 331, site.css.scss */
+  /* line 351, site.css.scss */
   h3 {
     margin: 15px 15px 0; }
 
-  /* line 335, site.css.scss */
+  /* line 355, site.css.scss */
   .grid {
     padding: 15px; }
 
-  /* line 339, site.css.scss */
+  /* line 359, site.css.scss */
   .portfolio-pieces:first-of-type {
     margin-top: -15px; }
 
-  /* line 343, site.css.scss */
+  /* line 363, site.css.scss */
   .portfolio-pieces li {
     width: 100%;
     min-height: 165px; }
-    /* line 347, site.css.scss */
-    .portfolio-pieces li img, .portfolio-pieces li video {
+    /* line 367, site.css.scss */
+    .portfolio-pieces li img {
       min-height: 100%; }
+    /* line 371, site.css.scss */
+    .portfolio-pieces li video {
+      display: none; }
 
-  /* line 352, site.css.scss */
+  /* line 376, site.css.scss */
   .grid {
     left: 0;
     top: 0; }
-    /* line 356, site.css.scss */
+    /* line 380, site.css.scss */
     .grid li {
       position: static;
       margin-top: 15px; }
-      /* line 360, site.css.scss */
+      /* line 384, site.css.scss */
       .grid li:first-of-type {
         margin-top: 0; }
 
-  /* line 366, site.css.scss */
+  /* line 390, site.css.scss */
   footer {
     margin-top: 0; } }
