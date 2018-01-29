@@ -300,81 +300,84 @@ footer {
   text-align: center;
   color: #999;
   margin-top: 30px; }
+  /* line 275, site.css.scss */
+  footer h2:first-of-type {
+    margin-bottom: 15px; }
 
 @media (max-width: 1400px) {
-  /* line 277, site.css.scss */
+  /* line 281, site.css.scss */
   .container {
     max-width: 1035px;
     margin: 0 auto; } }
 @media (max-width: 640px) {
-  /* line 284, site.css.scss */
+  /* line 288, site.css.scss */
   body {
     font-size: 0.8em;
     padding: 15px 0; }
 
-  /* line 290, site.css.scss */
+  /* line 294, site.css.scss */
   header .container {
     padding: 0 15px; }
-  /* line 294, site.css.scss */
+  /* line 298, site.css.scss */
   header h1 {
     line-height: 24px;
     margin-left: 0; }
-  /* line 299, site.css.scss */
+  /* line 303, site.css.scss */
   header a {
     margin-right: 0; }
-  /* line 303, site.css.scss */
+  /* line 307, site.css.scss */
   header img {
     width: 24px;
     height: 24px; }
 
-  /* line 309, site.css.scss */
+  /* line 313, site.css.scss */
   .nav {
     padding: 15px 0; }
-    /* line 312, site.css.scss */
+    /* line 316, site.css.scss */
     .nav li {
       margin: 0 6px; }
-      /* line 315, site.css.scss */
+      /* line 319, site.css.scss */
       .nav li .active:after {
         border-width: 4px;
         margin-left: -4px;
         top: 22px; }
 
-  /* line 323, site.css.scss */
+  /* line 327, site.css.scss */
   .demo-reel {
     margin: 15px 15px 0; }
 
-  /* line 327, site.css.scss */
+  /* line 331, site.css.scss */
   h3 {
     margin: 15px 15px 0; }
 
-  /* line 331, site.css.scss */
+  /* line 335, site.css.scss */
   .grid {
     padding: 15px; }
 
-  /* line 335, site.css.scss */
+  /* line 339, site.css.scss */
   .portfolio-pieces:first-of-type {
     margin-top: -15px; }
 
-  /* line 339, site.css.scss */
+  /* line 343, site.css.scss */
   .portfolio-pieces li {
     width: 100%;
     min-height: 165px; }
-    /* line 343, site.css.scss */
+    /* line 347, site.css.scss */
     .portfolio-pieces li img, .portfolio-pieces li video {
       min-height: 100%; }
 
-  /* line 348, site.css.scss */
+  /* line 352, site.css.scss */
   .grid {
     left: 0;
     top: 0; }
-    /* line 352, site.css.scss */
+    /* line 356, site.css.scss */
     .grid li {
       position: static;
       margin-top: 15px; }
-      /* line 356, site.css.scss */
+      /* line 360, site.css.scss */
       .grid li:first-of-type {
         margin-top: 0; }
 
-  /* line 362, site.css.scss */
+  /* line 366, site.css.scss */
   footer {
     margin-top: 0; } }
