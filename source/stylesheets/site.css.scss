@@ -271,6 +271,10 @@ footer {
   text-align: center;
   color: #999;
   margin-top: 30px;
+
+  h2:first-of-type {
+    margin-bottom: 15px;
+  }
 }
 
 @media (max-width: 1400px) {
