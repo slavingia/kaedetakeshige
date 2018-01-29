@@ -7,7 +7,6 @@
     <meta name="description" content="An aspiring BYU Animation student with an emphasis in rigging.">
     <title><%= current_page.data.title %></title>
     <%= stylesheet_link_tag :site %>
-    <%= stylesheet_link_tag "jquery.gridster.min" %>
 
     <link rel="shortcut icon" href="/images/favicon.png" />
 
@@ -27,27 +26,32 @@
       var setupLayout = function() {
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
-          var base_width = (($(".demo-reel").width() + 60) - 30 * 5) / 4;
+          var base_width = ($('.grid').width() - 30 * 5) / 4;
 
-          console.log(base_width);
-
-          $('.grid').css({'width': $(".demo-reel").width() + 200});
-
-          var grids = $('.grid').gridster({
+          var gridster = $('.grid').gridster({
             widget_margins: [30, 30],
             widget_base_dimensions: [base_width, base_width * 1.2],
             min_cols: 1,
-            max_cols: 4
+            max_cols: 4,
           }).data('gridster');
 
-          grids.generate_stylesheet({ rows: 4, cols: 4});
-          grids.disable();
+          gridster.disable();
+
+          $('.grid').css({ 'width': 'auto' });
+          gridster.generate_stylesheet({rows: 4, cols: 4, widget_base_dimensions: [base_width, base_width * 1.2]});
+
+          $('.grid').each(function() {
+            var lastElement = $(this).find('li:last-of-type');
+            $(this).css({ 'height': lastElement.position().top + lastElement.height() + 30 });
+          });
+        } else {
+          $('.grid').css({ 'height' : 'auto' });          
         }
       }
 
       setupLayout();
 
-      $(window).on('resize', function(){
+      $(window).on('resize', function() {
         setupLayout();
       });
 
