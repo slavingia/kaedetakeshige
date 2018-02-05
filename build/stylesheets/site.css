@@ -144,8 +144,34 @@ h3 {
         top: 30px;
         left: 50%;
         margin-left: -6px; }
+  /* line 101, site.css.scss */
+  .nav .top {
+    float: left;
+    margin-left: 30px; }
+    /* line 105, site.css.scss */
+    .nav .top img {
+      width: 24px;
+      height: 24px;
+      vertical-align: text-top; }
+  /* line 112, site.css.scss */
+  .nav .email {
+    float: right;
+    margin-right: 30px; }
+    /* line 116, site.css.scss */
+    .nav .email img {
+      width: 24px;
+      height: 24px;
+      vertical-align: text-top; }
+  /* line 123, site.css.scss */
+  .nav .top, .nav .email {
+    transition: .1s opacity ease-in-out;
+    opacity: 0; }
 
-/* line 102, site.css.scss */
+/* line 130, site.css.scss */
+.is-sticky .top, .is-sticky .email {
+  opacity: 1; }
+
+/* line 135, site.css.scss */
 .demo-reel {
   background: url("/images/reel_bg@2x.png");
   margin: 30px 30px 0;
@@ -153,10 +179,10 @@ h3 {
   position: relative;
   border-radius: 4px;
   overflow: hidden; }
-  /* line 110, site.css.scss */
+  /* line 143, site.css.scss */
   .demo-reel video {
     display: block; }
-  /* line 114, site.css.scss */
+  /* line 147, site.css.scss */
   .demo-reel button {
     border-radius: 4px;
     box-sizing: border-box;
@@ -176,7 +202,7 @@ h3 {
     outline: 0;
     transition: all 0.1s ease-in-out;
     z-index: 1; }
-    /* line 134, site.css.scss */
+    /* line 167, site.css.scss */
     .demo-reel button::before {
       content: '';
       position: absolute;
@@ -187,30 +213,30 @@ h3 {
       box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: opacity 0.1s ease-in-out; }
-    /* line 146, site.css.scss */
+    /* line 179, site.css.scss */
     .demo-reel button:hover {
       margin-top: -2px;
       cursor: pointer; }
-      /* line 150, site.css.scss */
+      /* line 183, site.css.scss */
       .demo-reel button:hover::before {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         opacity: 1; }
-    /* line 156, site.css.scss */
+    /* line 189, site.css.scss */
     .demo-reel button:active {
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
       background: #992020 url("/images/play.svg") no-repeat center;
       margin-top: 0; }
-      /* line 161, site.css.scss */
+      /* line 194, site.css.scss */
       .demo-reel button:active::before {
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); }
-    /* line 166, site.css.scss */
+    /* line 199, site.css.scss */
     .demo-reel button.hidden {
       opacity: 0; }
-  /* line 171, site.css.scss */
+  /* line 204, site.css.scss */
   .demo-reel video {
     width: 100%; }
 
-/* line 176, site.css.scss */
+/* line 209, site.css.scss */
 .grid li {
   display: block;
   background: #D8D8D8;
@@ -218,7 +244,7 @@ h3 {
   position: absolute;
   transition: all .1s ease-in-out !important;
   overflow: hidden; }
-  /* line 184, site.css.scss */
+  /* line 217, site.css.scss */
   .grid li::before {
     content: '';
     position: absolute;
@@ -230,22 +256,22 @@ h3 {
     opacity: 0;
     transition: opacity 0.1s ease-in-out;
     pointer-events: none; }
-  /* line 197, site.css.scss */
+  /* line 230, site.css.scss */
   .grid li:hover {
     cursor: pointer;
     margin-top: -2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-  /* line 203, site.css.scss */
+  /* line 236, site.css.scss */
   .grid li:active {
     box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1); }
-    /* line 206, site.css.scss */
+    /* line 239, site.css.scss */
     .grid li:active::before {
       opacity: 1; }
-  /* line 211, site.css.scss */
+  /* line 244, site.css.scss */
   .grid li img, .grid li video {
     max-width: 100%;
     display: block; }
-  /* line 216, site.css.scss */
+  /* line 249, site.css.scss */
   .grid li .play-button {
     background: rgba(0, 0, 0, 0.1) url("/images/play.svg") no-repeat center;
     position: absolute;
@@ -256,16 +282,16 @@ h3 {
     border-radius: 10px;
     transform: translateY(-50%) translateX(-50%);
     pointer-events: none;
-    z-index: 999; }
-  /* line 229, site.css.scss */
+    z-index: 0; }
+  /* line 262, site.css.scss */
   .grid li label {
     display: none; }
 
-/* line 234, site.css.scss */
+/* line 267, site.css.scss */
 .portfolio-pieces:first-of-type {
   margin-top: -30px; }
 
-/* line 238, site.css.scss */
+/* line 271, site.css.scss */
 .overlay {
   position: fixed;
   top: 0;
@@ -278,15 +304,15 @@ h3 {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.1s ease-in-out; }
-  /* line 251, site.css.scss */
+  /* line 284, site.css.scss */
   .overlay.active {
     opacity: 1;
     pointer-events: all;
     cursor: pointer; }
-  /* line 257, site.css.scss */
+  /* line 290, site.css.scss */
   .overlay .thumbnail {
     display: none; }
-  /* line 261, site.css.scss */
+  /* line 294, site.css.scss */
   .overlay img, .overlay video {
     max-height: 90%;
     max-width: 90%;
@@ -297,7 +323,7 @@ h3 {
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25); }
-  /* line 273, site.css.scss */
+  /* line 306, site.css.scss */
   .overlay label {
     text-align: center;
     color: #ddd;
@@ -307,97 +333,107 @@ h3 {
     left: 50%;
     transform: translateX(-50%);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
-    /* line 283, site.css.scss */
+    /* line 316, site.css.scss */
     .overlay label em {
       font-style: oblique; }
 
-/* line 289, site.css.scss */
+/* line 322, site.css.scss */
 footer {
   clear: both;
   text-align: center;
   color: #999;
   margin-top: 30px; }
-  /* line 295, site.css.scss */
+  /* line 328, site.css.scss */
   footer h2:first-of-type {
     margin-bottom: 15px; }
 
 @media (max-width: 1400px) {
-  /* line 301, site.css.scss */
+  /* line 334, site.css.scss */
   .container {
     max-width: 1035px;
     margin: 0 auto; } }
 @media (max-width: 640px) {
-  /* line 308, site.css.scss */
+  /* line 341, site.css.scss */
   body {
     font-size: 0.8em;
     padding: 15px 0; }
 
-  /* line 314, site.css.scss */
+  /* line 347, site.css.scss */
   header .container {
     padding: 0 15px; }
-  /* line 318, site.css.scss */
+  /* line 351, site.css.scss */
   header h1 {
     line-height: 24px;
     margin-left: 0; }
-  /* line 323, site.css.scss */
+  /* line 356, site.css.scss */
   header a {
     margin-right: 0; }
-  /* line 327, site.css.scss */
+  /* line 360, site.css.scss */
   header img {
     width: 24px;
     height: 24px; }
 
-  /* line 333, site.css.scss */
+  /* line 366, site.css.scss */
   .nav {
     padding: 15px 0; }
-    /* line 336, site.css.scss */
+    /* line 369, site.css.scss */
     .nav li {
       margin: 0 6px; }
-      /* line 339, site.css.scss */
+      /* line 372, site.css.scss */
       .nav li .active:after {
         border-width: 4px;
         margin-left: -4px;
         top: 22px; }
+    /* line 379, site.css.scss */
+    .nav .top, .nav .email {
+      display: none !important; }
 
-  /* line 347, site.css.scss */
+  /* line 384, site.css.scss */
   .demo-reel {
     margin: 15px 15px 0; }
 
-  /* line 351, site.css.scss */
+  /* line 388, site.css.scss */
   h3 {
     margin: 15px 15px 0; }
 
-  /* line 355, site.css.scss */
+  /* line 392, site.css.scss */
   .grid {
     padding: 15px; }
 
-  /* line 359, site.css.scss */
+  /* line 396, site.css.scss */
   .portfolio-pieces:first-of-type {
     margin-top: -15px; }
 
-  /* line 363, site.css.scss */
+  /* line 400, site.css.scss */
   .portfolio-pieces li {
     width: 100%;
-    min-height: 165px; }
-    /* line 367, site.css.scss */
+    min-height: 0; }
+    /* line 404, site.css.scss */
     .portfolio-pieces li img {
       min-height: 100%; }
-    /* line 371, site.css.scss */
+    /* line 408, site.css.scss */
     .portfolio-pieces li video {
       display: none; }
 
-  /* line 376, site.css.scss */
+  /* line 413, site.css.scss */
   .grid {
     left: 0;
     top: 0; }
-    /* line 380, site.css.scss */
+    /* line 417, site.css.scss */
     .grid li {
-      position: static;
+      position: relative;
       margin-top: 15px; }
-      /* line 384, site.css.scss */
+      /* line 421, site.css.scss */
+      .grid li:hover {
+        cursor: pointer;
+        margin-top: 15px; }
+      /* line 426, site.css.scss */
       .grid li:first-of-type {
         margin-top: 0; }
+        /* line 429, site.css.scss */
+        .grid li:first-of-type:hover {
+          margin-top: 0; }
 
-  /* line 390, site.css.scss */
+  /* line 436, site.css.scss */
   footer {
     margin-top: 0; } }
