@@ -97,6 +97,39 @@ h3 {
       }
     }
   }
+
+  .top {
+    float: left;
+    margin-left: 30px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      vertical-align: text-top;
+    }
+  }
+
+  .email {
+    float: right;
+    margin-right: 30px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      vertical-align: text-top;
+    }
+  }
+
+  .top, .email {
+    transition: .1s opacity ease-in-out;
+    opacity: 0;
+  }
+}
+
+.is-sticky {
+  .top, .email {
+    opacity: 1;
+  }
 }
 
 .demo-reel {
@@ -223,7 +256,7 @@ h3 {
     border-radius: 10px;
     transform: translateY(-50%) translateX(-50%);
     pointer-events: none;
-    z-index: 999;
+    z-index: 0;
   }
 
   label {
@@ -342,6 +375,10 @@ footer {
         top: 22px;
       }
     }
+
+    .top, .email {
+      display: none !important;
+    }
   }
 
   .demo-reel {
@@ -362,7 +399,7 @@ footer {
 
   .portfolio-pieces li {
     width: 100%;
-    min-height: 165px;
+    min-height: 0;
 
     img {
       min-height: 100%;
@@ -378,11 +415,20 @@ footer {
     top: 0;
 
     li {
-      position: static;
+      position: relative;
       margin-top: 15px;
+
+      &:hover {
+        cursor: pointer;
+        margin-top: 15px;
+      }
 
       &:first-of-type {
         margin-top: 0;
+
+        &:hover {
+          margin-top: 0;
+        }
       }
     }
   }
