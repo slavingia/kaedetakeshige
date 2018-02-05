@@ -54,19 +54,27 @@
     <h3>Animation:</h3>
     <ul class="portfolio-pieces grid" id="animation">
       <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-        <video src="/videos/ramshorn.mp4" />
+        <div class="play-button"></div>
+        <img class="thumbnail" src="/images/portfolio/thumbnails/ramshorn.png" />
+        <video src="/videos/ramshorn.mp4"></video>
         <label>Responsible for animation for BYU Animation’s film <em>Ram’s Horn</em></label>
       </li>
       <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
-        <video src="/videos/dialogue.mp4" />
+        <div class="play-button"></div>
+        <img class="thumbnail" src="/images/portfolio/thumbnails/dialogue.png" />
+        <video src="/videos/dialogue.mp4"></video>
         <label>Responsible for animation, created in Toonboom, audio from <em>30 Rock</em></label>
       </li>
       <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
-        <video src="/videos/cage_fight.mov" />
+        <div class="play-button"></div>
+        <img class="thumbnail" src="/images/portfolio/thumbnails/cagefight.png" />
+        <video src="/videos/cage_fight.mov"></video>
         <label>Responsible for animation, created in Toonboom</label>
       </li>
       <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
-        <video src="/videos/kenneth.mp4" />
+        <div class="play-button"></div>
+        <img class="thumbnail" src="/images/portfolio/thumbnails/kenneth.png" />
+        <video src="/videos/kenneth.mp4"></video>
         <label>responsible for modeling and animation audio from <em>30 Rock</em></label>
       </li>
     </ul>
@@ -163,14 +171,6 @@
         }, 1000);
       });
 
-      $('.grid li').on('click', function(e) {
-        e.preventDefault();
-
-        $('.overlay').html($(this).html());
-        $('.overlay').addClass('active');
-        $('.overlay video').attr('autoplay', true);
-      });
-
       var demoReelVideo = $(".demo-reel-video")[0];
 
       $('.js-trigger-demo-reel-play').on('click', function(e) {
@@ -187,11 +187,24 @@
         $(demoReelVideo).removeAttr('controls');
       };
 
+      $('.grid li').on('click', function(e) {
+        e.preventDefault();
+
+        console.log($(this).html());
+
+        $('.overlay').html($(this).html());
+        $('.overlay').addClass('active');
+        $('.overlay video').attr('autoplay', true);
+        $($('.overlay video')[0]).attr('controls', 'controls');
+      });
+
       $('.overlay').on('click', function(e) {
         e.preventDefault();
 
-        $('.overlay').removeClass('active');
-        $('.overlay video').attr('autoplay', false);
+        if (!$(event.target).is('video')) {
+          $('.overlay').removeClass('active');
+          $('.overlay video').attr('autoplay', false);
+        }
       });
 
       $(window).on('scroll', function() {

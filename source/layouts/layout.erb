@@ -12,6 +12,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/javascripts/jquery.gridster.min.js"></script>
+    <script src="/javascripts/jquery.hotkeys.js"></script>
     <script src="/javascripts/jquery.sticky.js"></script>
   </head>
 
@@ -81,10 +82,19 @@
         $(demoReelVideo).removeAttr('controls');
       };
 
+      var currentGridItemIndex = -1,
+          gridItems = $('.grid li');
+
       $('.grid li').on('click', function(e) {
         e.preventDefault();
 
-        console.log($(this).html());
+        var $that = $(this);
+
+        gridItems.each(function(index) {
+          if ($that.is($(this))) {
+            currentGridItemIndex = index;
+          }
+        });
 
         $('.overlay').html($(this).html());
         $('.overlay').addClass('active');
@@ -114,6 +124,19 @@
           $('.nav a').removeClass('active');
           $('.nav a[href="#figure-drawing"]').addClass('active');
         }
+      });
+
+      $(document).bind('keydown', 'esc', function() {
+        $('.overlay').removeClass('active');
+        $('.overlay video').attr('autoplay', false);
+      });
+
+      $(document).bind('keydown', 'left', function() {
+        $(gridItems[currentGridItemIndex - 1]).click();
+      });
+
+      $(document).bind('keydown', 'right', function() {
+        $(gridItems[currentGridItemIndex + 1]).click();
       });
     });
   </script>
