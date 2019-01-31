@@ -29,10 +29,11 @@
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width > 640) {
           var base_width = ($('.grid').width() - 30 * 5) / 4;
+          var ratio = 1.2;
 
           var gridster = $('.grid').gridster({
             widget_margins: [30, 30],
-            widget_base_dimensions: [base_width, base_width * 1.2],
+            widget_base_dimensions: [base_width, base_width * ratio],
             min_cols: 1,
             max_cols: 4,
           }).data('gridster');
@@ -40,7 +41,7 @@
           gridster.disable();
 
           $('.grid').css({ 'width': 'auto' });
-          gridster.generate_stylesheet({rows: 7, cols: 4, widget_base_dimensions: [base_width, base_width * 1.2]});
+          gridster.generate_stylesheet({rows: 7, cols: 4, widget_base_dimensions: [base_width, base_width * ratio]});
 
           $('.grid').each(function() {
             var lastElement = $(this).find('li:last-of-type');
@@ -113,7 +114,7 @@
       });
 
       $(window).on('scroll', function() {
-        $('.portfolio-pieces').each(function() {
+        $('.portfolio-pieces, .about').each(function() {
           if ($(window).scrollTop() >= $(this).offset().top - 200) {
             var id = $(this).attr('id');
             $('.nav a').removeClass('active');
@@ -123,7 +124,7 @@
 
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
           $('.nav a').removeClass('active');
-          $('.nav a[href="#figure-drawing"]').addClass('active');
+          $('.nav a[href="#about"]').addClass('active');
         }
       });
 
