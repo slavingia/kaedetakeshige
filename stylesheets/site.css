@@ -338,102 +338,153 @@ h3 {
       font-style: oblique; }
 
 /* line 322, site.css.scss */
+.about {
+  margin: 30px;
+  padding: 30px 0;
+  border: 1px solid #ddd;
+  border-width: 1px 0; }
+  /* line 328, site.css.scss */
+  .about .container {
+    max-width: 700px; }
+  /* line 332, site.css.scss */
+  .about img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    position: absolute; }
+  /* line 339, site.css.scss */
+  .about p {
+    font-size: 1.7em;
+    margin-left: 150px; }
+    /* line 343, site.css.scss */
+    .about p strong {
+      color: #454545;
+      font-size: 1.4em; }
+    /* line 348, site.css.scss */
+    .about p:not(:first-child) {
+      margin-top: 30px; }
+    /* line 352, site.css.scss */
+    .about p:last-child {
+      margin-bottom: 30px; }
+
+/* line 358, site.css.scss */
 footer {
   clear: both;
   text-align: center;
   color: #999;
-  margin-top: 30px; }
-  /* line 328, site.css.scss */
+  margin-top: 60px; }
+  /* line 364, site.css.scss */
   footer h2:first-of-type {
     margin-bottom: 15px; }
 
 @media (max-width: 1400px) {
-  /* line 334, site.css.scss */
+  /* line 370, site.css.scss */
   .container {
     max-width: 1035px;
     margin: 0 auto; } }
 @media (max-width: 640px) {
-  /* line 341, site.css.scss */
+  /* line 377, site.css.scss */
   body {
     font-size: 0.8em;
     padding: 15px 0; }
 
-  /* line 347, site.css.scss */
+  /* line 383, site.css.scss */
   header .container {
     padding: 0 15px; }
-  /* line 351, site.css.scss */
+  /* line 387, site.css.scss */
   header h1 {
     line-height: 24px;
     margin-left: 0; }
-  /* line 356, site.css.scss */
+  /* line 392, site.css.scss */
   header a {
     margin-right: 0; }
-  /* line 360, site.css.scss */
+  /* line 396, site.css.scss */
   header img {
     width: 24px;
     height: 24px; }
 
-  /* line 366, site.css.scss */
+  /* line 402, site.css.scss */
   .nav {
     padding: 15px 0; }
-    /* line 369, site.css.scss */
+    /* line 405, site.css.scss */
     .nav li {
       margin: 0 6px; }
-      /* line 372, site.css.scss */
+      /* line 408, site.css.scss */
       .nav li .active:after {
         border-width: 4px;
         margin-left: -4px;
         top: 22px; }
-    /* line 379, site.css.scss */
+    /* line 415, site.css.scss */
     .nav .top, .nav .email {
       display: none !important; }
 
-  /* line 384, site.css.scss */
+  /* line 420, site.css.scss */
   .demo-reel {
     margin: 15px 15px 0; }
 
-  /* line 388, site.css.scss */
+  /* line 424, site.css.scss */
   h3 {
     margin: 15px 15px 0; }
 
-  /* line 392, site.css.scss */
+  /* line 428, site.css.scss */
   .grid {
     padding: 15px; }
 
-  /* line 396, site.css.scss */
+  /* line 432, site.css.scss */
   .portfolio-pieces:first-of-type {
     margin-top: -15px; }
 
-  /* line 400, site.css.scss */
+  /* line 436, site.css.scss */
   .portfolio-pieces li {
     width: 100%;
     min-height: 0; }
-    /* line 404, site.css.scss */
+    /* line 440, site.css.scss */
     .portfolio-pieces li img {
       min-height: 100%; }
-    /* line 408, site.css.scss */
+    /* line 444, site.css.scss */
     .portfolio-pieces li video {
       display: none; }
 
-  /* line 413, site.css.scss */
+  /* line 449, site.css.scss */
   .grid {
     left: 0;
     top: 0; }
-    /* line 417, site.css.scss */
+    /* line 453, site.css.scss */
     .grid li {
       position: relative;
       margin-top: 15px; }
-      /* line 421, site.css.scss */
+      /* line 457, site.css.scss */
       .grid li:hover {
         cursor: pointer;
         margin-top: 15px; }
-      /* line 426, site.css.scss */
+      /* line 462, site.css.scss */
       .grid li:first-of-type {
         margin-top: 0; }
-        /* line 429, site.css.scss */
+        /* line 465, site.css.scss */
         .grid li:first-of-type:hover {
           margin-top: 0; }
 
-  /* line 436, site.css.scss */
+  /* line 472, site.css.scss */
+  .about {
+    margin: 15px;
+    padding: 15px 0; }
+    /* line 476, site.css.scss */
+    .about img {
+      width: 120px;
+      height: 120px;
+      position: static; }
+    /* line 482, site.css.scss */
+    .about p {
+      font-size: 17px;
+      line-height: 150%;
+      margin-left: 0; }
+      /* line 487, site.css.scss */
+      .about p:not(:first-child) {
+        margin-top: 15px; }
+      /* line 491, site.css.scss */
+      .about p:last-child {
+        margin-bottom: 15px; }
+
+  /* line 497, site.css.scss */
   footer {
     margin-top: 0; } }
